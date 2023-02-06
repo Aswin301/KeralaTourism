@@ -36,17 +36,29 @@
     </div>
   </nav>
     <div class="container d-flex align-items-center min-vh-100 justify-content-center">
-    <form id="loginform">
+    <form id="loginform" action="success.html">
         <div class="form-group">
             <h5 class="container text-center">User Sign up</h5>
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" onkeyup="validateemail()" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small  id="errornameblank"></small>
+          <br>
           <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <br>
+
+        <div class="form-group">
+          <label for="exampleInputPhone">Phone Number</label>
+            <input type="tel" onkeyup="validatephone()" class="form-control" id="phone"  placeholder="Enter phone number">
+            <small  id="msg"></small>
+          </div>
+          <br>
+
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control" id="exampleInputPassword1" onkeyup="validatepassword()" placeholder="Password">
+          <small  id="pwdmsg" class="text-danger"></small>
+          <small id="strength"></small>
         </div>
         <br>
         <div class="form-check">
@@ -54,10 +66,11 @@
           <label class="form-check-label" for="exampleCheck1">I agree to the privacy policy, terms and conditions</label>
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="submitbutton" onclick="return validateform()" type="submit" class="btn btn-primary">Submit</button>
         <br><br>
         <small class="form-text text-muted">Already have an acccount? Then <a href="Login.html">login here</a></small>
       </form>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
