@@ -41,12 +41,12 @@ var strength=document.getElementById('strength');
         phonemsg.innerHTML="Phone number validated";
         phonemsg.style.color="#00FF00";
         phonemsg.style.fontWeight='bold';
-        return false;
+        return true;
     }else {
         phonemsg.innerHTML="Phone Number is invalid";
         phonemsg.style.color="#FF0000"; 
         phonemsg.style.fontWeight='bold';
-        return true;
+        return false;
     }
 }
 function validatepassword(){
